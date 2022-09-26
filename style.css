@@ -79,7 +79,15 @@
      grid-row-start: span 2;
  }
  
- @media (max-width:800px)and (min-width:375px) {
+ .galeria__item:nth-child(16) {
+     grid-column-start: span 1;
+ }
+ 
+ .galeria__item:nth-child(17) {
+     grid-column-start: span 2;
+ }
+ 
+ @media (max-width:800px)and (min-width:360px) {
      .galeria__item:nth-child(4) {
          grid-column-start: span 2;
      }
@@ -103,5 +111,11 @@
      }
      .galeria__item:nth-child(10) {
          grid-row-start: span 2;
+     }
+     .galeria__item:nth-child(16) {
+         grid-column-start: span 2;
+     }
+     .galeria__item:nth-child(17) {
+         grid-column-start: span 2;
      }
  }
