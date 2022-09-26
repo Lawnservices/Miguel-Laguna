@@ -42,14 +42,6 @@
      margin-top: 140px;
  }
  
- .photos {
-     margin-left: 38px;
-     float: left;
-     width: 40%;
-     height: 400px;
-     object-fit: cover;
- }
- 
  .galeria {
      display: grid;
      grid-template-columns: repeat(3, 1fr);
