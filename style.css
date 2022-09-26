@@ -1,0 +1,8 @@
+.navegacion {
+    background-color: #154256;
+    width: 100px;
+    height: 100px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
