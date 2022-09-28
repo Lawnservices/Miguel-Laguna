@@ -122,4 +122,7 @@
      .galeria__item:nth-child(17) {
          grid-column-start: span 2;
      }
+     html {
+         font-size: 18px;
+     }
  }
