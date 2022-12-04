@@ -108,7 +108,7 @@
  }
  
  .galeria__item:nth-child(17) {
-     grid-column-start: span 2;
+     grid-column-start: span 1;
  }
  
  @media (max-width:800px)and (min-width:360px) {
