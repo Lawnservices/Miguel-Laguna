@@ -7,17 +7,37 @@
      width: 100%;
      height: 100px;
      position: absolute;
+     position: sticky;
      top: 0;
-     left: 0;
+ }
+ 
+ .btn {
+     margin-left: 40px;
+ }
+ 
+ #orario {
+     padding: 20px;
+     display: none;
+     clear: both;
+ }
+ 
+ img {
+     width: 560px;
+     height: 200px;
+     margin-top: 10px;
+ }
+ 
+ .btn {
+     margin-top: 16px;
  }
  
  .navegacion a {
      line-height: 60px;
-     font-size: 2rem;
+     font-size: 1rem;
      text-decoration: none;
      margin-left: 26px;
-     font-weight: 600;
-     color: #154256;
+     font-weight: 300;
+     color: #fff;
  }
  
  h1 {
