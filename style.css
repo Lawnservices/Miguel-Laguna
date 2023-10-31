@@ -2,22 +2,16 @@
      font-family: 'Courier New', Courier, monospace
  }
  
- .navegacion {
-     background-color: rgb(117, 180, 117);
-     width: 100%;
-     height: 100px;
-     position: absolute;
-     position: sticky;
-     top: 0;
- }
+  
  
  .btn {
      padding: 10px 10px;
      background-color: #154256;
-     margin-top: 4px;
+     margin-top: 120px;
+     margin-left: 300px;
  }
  .btn:hover{
-    background-color: #f6f6f6;
+    background-color: #333;
     transition: 0.3s;
  }
  .btn-dark{
@@ -30,17 +24,10 @@
      background-color: #f6f6f6;
  }
  
- #subscribe {
-     text-decoration: none;
-     font-size: 1.6rem;
-     float: right;
-     margin-right: 100px;
-     background-color: #f6f6f6;
-     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
-     padding: 10px 10px;
- }
+ 
  
  #orario {
+   
      padding: 20px;
      display: none;
      clear: both;
@@ -54,19 +41,7 @@
      width: 560px;
      height: 200px;
      margin-top: 10px;
- }
- 
-  
- 
- .navegacion a {
-     line-height: 60px;
-     font-size: 1rem;
-     text-decoration: none;
-     margin-left: 26px;
-     font-weight: 300;
-     color: #fff;
- }
- 
+ } 
  h1 {
      margin-top: 100px;
      margin-left: 20px;
