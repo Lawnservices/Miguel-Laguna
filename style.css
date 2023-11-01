@@ -142,3 +142,8 @@
          font-size: 18px;
      }
  }
+ @media (min-width:300px)and (max-width:860px){
+ #mensaje{
+    display: none;
+ }
+ }
