@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
     <meta property="og:locale" content="en_US">
     <meta property="title" content="Miguel..Laguna">
     <meta name="author" content="miguel laguna">
@@ -19,48 +21,68 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="@media.css">
     <link rel="shortcut icon" href="https://img.icons8.com/color/48/home--v1.png" type="image/x-icon">
+    <link rel="stylesheet" href="nueva.css">
    
     <title>Miguel..Laguna</title>
 </head>
 
 <body>
  
-<nav class="navbar bg-body-tertiary fixed-top">
-    <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Services List</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="https://lagunalawnservice.com/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://lagunalawnservice.com/prices">Prices</a>
-                    </li>
+<nav  id="navbar" class="navbar">
+    
+<ul>
+    <li><a  class=" nav-link" href="#hero">Home</a></li>
+    <li><a  class=" nav-link" href="https://lagunalawnservice.com/prices">Prices</a></li>
+    <li><a  class=" nav-link" href="https://www.youtube.com/channel/UCaZ_FoEDUrrHj_FKiEPLkyA/featured">Youtube</a></li>
+    <li><a  class=" nav-link"  href="https://cash.app/$LagunaLawnServices">Cash App</a></li>
+    <li><a class=" nav-link" href="milto:miguellaguna88@gmail.com">@mail</a></li>
+    </ul>
+
+ 
                     
                          
-                            <li><a class=" nav-link" href="https://www.youtube.com/channel/UCaZ_FoEDUrrHj_FKiEPLkyA/featured">Youtube</a></li>
-                            <li><a class=" nav-link" href="https://cash.app/$LagunaLawnServices">Cash App</a></li>
-                            
-                            <li><a class=" nav-link" href="milto:https://cash.app/$LagunaLawnServices">@mail</a></li>
-                   
-                    
-                </ul>
-                
+                  
+</nav>
+<section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+    <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+            <div class="carousel-container">
+                <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Lawn Services</span></h2>
+                <p class="animate__animated fanimate__adeInUp">Gardening is a passion that fills us with joy and satisfaction. In every corner of our garden, we find an inexhaustible
+                source of inspiration and connection with nature. Planting flowers and caring for plants gives us the opportunity to
+                create a small green paradise in our own home. The feeling of touching the earth, watching plants grow and flowers bloom
+                is truly magical. We love spending hours in the garden, pruning, watering and pampering our beloved plants. Gardening
+                connects us with the earth, relaxes us and fills us with peace, and makes us feel part of a constant cycle of life and
+                renewal. It is a hobby that we thoroughly enjoy and that allows us to escape the hustle and stress of everyday life,
+                immersing ourselves in a world of natural beauty and serenity.
+                </p>
+                <a href="https://lagunalawnservice.com/" class="btn-get-started     ">Read More</a>
             </div>
         </div>
-    </div>
-</nav>
+
+        <!-- Slide 2 -->
+
+
+        <!-- Slide 3 -->
+        
+        </div>
+
+
+
+
+     
+
+
+
+</section><!-- End Hero -->
 
     <button id="galeria" class="btn btn-dark">Office Hours</button>
     <button class="btn btn-dark" id="mensaje" onclick="mostrarMensajeCookies()">Accept Cookies</button>
