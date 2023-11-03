@@ -1,15 +1,29 @@
-  a:focus {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px 15px 7px 15px;
-  margin-left: 5px;
-  font-size: 14px;
-  color: #fff;
-  white-space: nowrap;
-  transition: 0.3s;
-  border-radius: 20px;
+body{
+  padding: 0;
+  
 }
+.navbar{
+  display: flex;
+  float: left;
+  background-color: #ef6603;
+  width: 100%;
+  height: auto;
+}
+ul{
+  display: flex;
+  list-style: none;
+}
+li{
+  text-decoration: none;
+  float: left;
+}
+li a{
+  text-decoration: none;
+  padding: 18px 18px;
+  text-align: center;
+  margin-left: 18px;
+}
+
 .animate__animated{
   text-align: justify;
   font-size: 18px;

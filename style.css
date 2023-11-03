@@ -61,7 +61,7 @@
      height: 500px;
      margin-top: 140px;
  }
- 
+
  .galeria {
      display: grid;
      grid-template-columns: repeat(3, 1fr);
