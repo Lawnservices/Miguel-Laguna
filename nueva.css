@@ -8,6 +8,10 @@ body{
   background-color: #ef6603;
   width: 100%;
   height: auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 ul{
   display: flex;
