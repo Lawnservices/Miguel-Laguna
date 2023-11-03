@@ -146,4 +146,16 @@
  #mensaje{
     display: none;
  }
+ .carousel-item{
+    display: none;
+ }
+ .carousel-container{
+    display: none;
+ }
+ .animate__animated {
+    display: none;
+ }
+ .pago{
+    display: none;
+ }
  }
