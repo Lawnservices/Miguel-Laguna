@@ -160,5 +160,7 @@
  }
  .ariva ,#ariva{
     display: none;
+ }html{
+    font-size: 18px;
  }
  }
