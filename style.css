@@ -2,10 +2,7 @@
      font-family: 'Courier New', Courier, monospace;
      
  }
- 
-  
- 
- .btn {
+  .btn {
      padding: 10px 10px;
      background-color: #154256;
      margin-top: 120px;
@@ -24,11 +21,6 @@
      color: #154256;
      background-color: #f6f6f6;
  }
- 
- 
- 
-  
- 
  img {
      width: 560px;
      height: 200px;
