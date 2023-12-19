@@ -1,111 +1,47 @@
 body{
   padding: 0;
-  
+  margin: 0;
 }
-.navbar{
-  display: flex;
-  float: left;
-  background-color: #ef6603;
-  width: 100%;
-  height: auto;
+ 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 100;
 }
-ul{
-  display: flex;
-  list-style: none;
-}
-li{
-  text-decoration: none;
+
+li {
   float: left;
-  list-style: none;
 }
-li i{
-  list-style: none;
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-}
-li a{
   font-size: 20px;
-  text-decoration: none;
-  padding: 18px 18px;
-  text-align: center;
-  margin-left: 20px;
 }
 
-.animate__animated{
-  text-align: justify;
-  font-size: 18px;
-  font-weight:400px;
-}
-.btn-get-started {
-  text-decoration: none;
-}
-/*--------------------------------------------------------------
-# Hero Section
---------------------------------------------------------------*/
-#hero {
-  width: 100%;
-  background: linear-gradient(0deg, rgb(42, 44, 57) 0%, rgb(51, 54, 74) 100%);
-  padding: 10;
+li a:hover {
+  background-color: #111;
 }
 
-#hero .carousel-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  position: relative;
-  height: 70vh;
-   
-}
-
-#hero h2 {
-  color: #fff;
-  margin-bottom: 30px;
-  font-size: 48px;
-  font-weight: 700;
-}
-
-#hero p {
-  width: 80%;
-  animation-delay: 0.4s;
-  margin: 0 auto 30px auto;
-  color: #fff;
-  font-size: 24px;
-}
-#hero .btn-get-started {
-  font-family: "Raleway", sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 12px 32px;
-  border-radius: 50px;
-  transition: 0.5s;
-  line-height: 1;
-  margin: 10px;
-  color: #fff;
-  animation-delay: 0.8s;
-  border: 2px solid #ef6603;
-}
-
-#hero .btn-get-started:hover {
-  background: #ef6603;
-  color: #fff;
-  text-decoration: none;
-}
 .orario{
   text-align:right;
   background-color: #003349; 
-
+overflow: hidden;
 } 
-.orario i{
+.orario p{
 margin-right: 30px;
   font-size: 20px;
   color: #fff;
+  
+
 }
 
  
