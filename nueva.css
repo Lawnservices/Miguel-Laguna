@@ -27,10 +27,11 @@ li i{
   text-decoration: none;
 }
 li a{
+  font-size: 20px;
   text-decoration: none;
   padding: 18px 18px;
   text-align: center;
-  margin-left: 18px;
+  margin-left: 20px;
 }
 
 .animate__animated{
@@ -73,6 +74,7 @@ li a{
   animation-delay: 0.4s;
   margin: 0 auto 30px auto;
   color: #fff;
+  font-size: 24px;
 }
 #hero .btn-get-started {
   font-family: "Raleway", sans-serif;
@@ -95,7 +97,16 @@ li a{
   color: #fff;
   text-decoration: none;
 }
- 
+.orario{
+  text-align:right;
+  background-color: #003349; 
+
+} 
+.orario i{
+margin-right: 30px;
+  font-size: 20px;
+  color: #fff;
+}
 
  
  
