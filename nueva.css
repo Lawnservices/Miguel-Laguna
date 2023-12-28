@@ -43,8 +43,18 @@ margin-right: 30px;
   
 
 }
-
- 
+.work{
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  box-shadow: 0px 0px 2px #333;
+}
+.work p{
+  font-size:32px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-weight: bolder;
+}
+  
  
  
 

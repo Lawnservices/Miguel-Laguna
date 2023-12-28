@@ -30,4 +30,10 @@ html{
   
   
  }
+ @media (min-width:320px) and (max-width:800px){
+  .work p{
+  font-size:16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;    
+}
+}
   
