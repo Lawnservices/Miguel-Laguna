@@ -1,0 +1,16 @@
+.casa{
+  width: 90%;
+  height: auto;
+  margin: auto;
+}
+.casa button{
+  float: right;
+}
+button{
+  border: none;
+  background-color: #fff;
+  margin-top: 4px;
+}
+#boton2{
+  display: none;
+}
