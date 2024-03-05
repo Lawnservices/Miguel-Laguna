@@ -2,16 +2,26 @@ body{
   padding: 0;
   margin: 0;
 }
- 
+#lunes{
+  width: 100%;
+  text-align:center;
+  background-color: #003349; 
+  font-size: 20px;
+  color: #fff;
+} 
+.cavesa{
+  overflow: hidden;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+} 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #333;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+   
 }
 
 li {
@@ -31,18 +41,7 @@ li a:hover {
   background-color: #111;
 }
 
-.orario{
-  text-align:right;
-  background-color: #003349; 
-overflow: hidden;
-} 
-.orario p{
-margin-right: 30px;
-  font-size: 20px;
-  color: #fff;
-  
-
-}
+ 
 .work{
   width: 100%;
   height: 60px;
