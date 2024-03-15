@@ -8,6 +8,11 @@ body {
   background-color: #003349;
   display: flex;
 }
+.cavesa{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
 .cavesa img{
   margin-left: 30px;
   margin: 10px;
@@ -15,6 +20,14 @@ body {
 .cavesa h1{
   margin-left: 30px;
   color: #fff;
+}
+.acento p{
+  float: left;
+  color: #fff;
+  margin-left: 800px;
+  display: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
 }
 .titulo {
   color: #000;
@@ -35,6 +48,7 @@ table {
   border: 1px solid #333;
   margin: auto;
   background-color: #f6f6f6;
+  
 }
 
 tr,

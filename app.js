@@ -1,30 +1,21 @@
-$(document).ready(function() {
-    $('#galeria').click(function() {
-        $('#orario').slideToggle('slow');
-        $('#menos').slideToggle('slow');
-    });
+const saluda = document.getElementById("cavesa");
+const saludar = document.getElementById("muchos");
+const sala = document.getElementById("foto");
+const salas = document.getElementById("acento");
+
+document.addEventListener("scroll", () => {
+  var scroll_position = window.scrollY;
+  if (scroll_position > 200) {
+    cavesa.style.backgroundColor = "#f6f6f6";
+    muchos.style.color = "#000";
+    foto.style.display = "none";
+    acento.style.display = "block";
+    acento.style.color = '#000';
+  } else {
+    cavesa.style.backgroundColor = "#003349";
+    muchos.style.color = "#fff";
+    foto.style.display = "block";
+     acento.style.display = "none";
+     
+  }
 });
-
-var mesa = "Visitanos en Nuestro canal de Youtube.";
-
-function mensage() {
-    var el = document.getElementById('menos');
-    el.textContent = mesa;
-}
-mensage();
-
-function color(){
-    document.getElementById("cuerpo").style.backgroundColor = "#333";
-    document.getElementById("boton1").style.display = "none";
-    document.getElementById("boton2").style.backgroundColor = "#333";
-    document.getElementById("boton2").style.display = "block";
-    document.getElementById("work").style.backgroundColor = "#003349";
-    document.getElementById("text").style.color = "#fff";
-}
-function colores(){
-    document.getElementById("cuerpo").style.backgroundColor = "#fff";
-    document.getElementById("boton1").style.display = "block";
-    document.getElementById("boton2").style.display = "none";
-    document.getElementById("work").style.backgroundColor = "#fff";
-    document.getElementById("text").style.color = "#000";
-}
