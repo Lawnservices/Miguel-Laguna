@@ -75,4 +75,7 @@ td {
     width: 98%;
     height: auto;
   }
+  .acento,#acento{
+    display: none;
+  }
 }
