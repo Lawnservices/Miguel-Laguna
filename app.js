@@ -25,12 +25,5 @@ document.addEventListener('scroll',() => {
  }
 });
 
-const app = Vue.createApp({
-  data() {
-    return {
-     mensage: "Lawn Mowing"
-    }
-   }
-})
-app.mount('#app')
+ 
 });
