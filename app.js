@@ -24,4 +24,13 @@ document.addEventListener('scroll',() => {
   cavezaa.style.color = '#fff';
  }
 });
+
+const app = Vue.createApp({
+  data() {
+    return {
+     mensage: "Lawn Mowing"
+    }
+   }
+})
+app.mount('#app')
 });
