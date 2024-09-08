@@ -1,0 +1,65 @@
+#principal {
+    background-color: #0366d6;
+    color: #fff;
+}
+#principal .id-s{
+    background-color: #154;
+    color: #fff;
+}
+#principal .services{
+background-color: #3e8e41;
+color: #fff;
+}
+ 
+.nombre {
+    text-align: center;
+}
+
+.nombre span {
+    color: #0366d6;
+}
+
+.nombre b {
+    color: rgba(22, 191, 166, 0.8);
+}
+
+.nombre a {
+    text-decoration: none;
+    color: #04aa6b;
+    font-size: 1.4rem;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.titulo {
+    color: #154;
+    font-size: 1.2rem;
+    text-align: start;
+    padding: 6px;
+    
+}
+.titulos{
+    background-color: #333;
+}
+table,
+th,
+td {
+    border: 1px solid #154;
+    padding: 12px 12px;
+     
+}
+td{
+    text-align: justify;
+}
+table {
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    margin-top: 40px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
