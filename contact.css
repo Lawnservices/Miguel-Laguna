@@ -1,0 +1,47 @@
+label{
+  width: 60%;
+}
+.w3-section label{
+   margin-left: 20%;
+} 
+.w3-section input{
+  width:60%;
+  margin-left: auto;
+  margin-right: auto;
+} 
+.w3-button{
+  width:20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+ footer{
+  width: 100%;
+  height: auto;
+  margin-top: 130px;
+  background-color: #333;
+
+}
+footer .piedepagina{
+  width: 60%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+footer .piedepagina span{
+  display: block;
+  padding: 6px 6px ;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #fff;
+}
+footer .piedepagina a{
+  text-decoration: none;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+}
+footer p{
+  color: #fff;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+}
