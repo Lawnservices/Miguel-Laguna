@@ -1,25 +1,30 @@
-.mas{
-  margin-top:100px;
-  font-size: 62px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: blue;
+.colores{
+  width: 80%;
+  height: 160px;
+  margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: aliceblue;
+  border-top: 12px solid green;
+  border-radius: 0.4rem;
+} 
+.colores h4{
   text-align: center;
-  
 }
-iframe{
-  height:1200px;
-  width: 100%;
-   overflow: hidden;
-   border: none;
+.colores p{
+  width:90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
 }
 label{
-  width: 60%;
+  width: 80%;
 }
 .w3-section label{
-   margin-left: 20%;
+   margin-left: 10%;
 } 
 .w3-section input{
-  width:60%;
+  width:80%;
   margin-left: auto;
   margin-right: auto;
 } 
