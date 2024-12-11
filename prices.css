@@ -10,7 +10,17 @@
 background-color: #3e8e41;
 color: #fff;
 }
- 
+.fotos{
+    display: none;
+} 
+.servicio{
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: #154;
+    font-size: 18px;
+    display: none;
+}
 .nombre {
     text-align: center;
 }
