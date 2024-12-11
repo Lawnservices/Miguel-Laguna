@@ -9,7 +9,7 @@ if (yaVisitado) {
   if (trabajo) {
         setTimeout(function () {
             trabajo.style.display = 'block';
-        }, 6000);
+        }, 3000);
     }
    localStorage.setItem('paginaVisitada', 'true');
 }
