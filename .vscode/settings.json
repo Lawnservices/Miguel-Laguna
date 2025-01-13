@@ -1,3 +1,6 @@
 {
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "editor.fontFamily": "Verdana, Geneva, Tahoma, sans-serif",
+  "editor.fontSize": 18,
+  "files.autoSave": "onFocusChange"
 }
