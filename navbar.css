@@ -1,4 +1,9 @@
-
+.ariva{
+background-color: #333;
+position: sticky;
+position:-webkit-sticky;
+top: 0;
+}
         /* Estilos del navbar */
         .navbar {
             display: flex;
@@ -7,6 +12,12 @@
             background-color: #333;
             padding: 10px 20px;
             color: white;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            position: sticky;
+            position:-webkit-sticky;
+            top: 0;
         }
 
         .navbar .logo {
@@ -28,7 +39,7 @@
         .navbar ul li a {
             color: white;
             text-decoration: none;
-            font-size: 18;
+            font-size:20px;
             transition: color 0.3s;
 
         }
