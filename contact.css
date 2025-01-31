@@ -36,9 +36,9 @@ label{
  footer{
   width: 100%;
   height: auto;
-  margin-top: 130px;
+  margin-top: 230px;
   background-color: #333;
-
+ margin-bottom: 0px;
 }
 footer .piedepagina{
   width: 60%;

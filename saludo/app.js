@@ -13,4 +13,6 @@ if (todayHours >= 18){
 }
 document.getElementById('demo').textContent = greetin;
 
-document.getElementById('year').textContent = new Date () .getFullYear();
+ 
+ 
+ 
