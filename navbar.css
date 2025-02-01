@@ -51,15 +51,18 @@ top: 0;
         /* Estilo responsivo */
         @media (max-width: 768px) {
             .navbar ul {
+                width: 40%;
                 flex-direction: column;
                 display: none; /* Ocultar menú */
-                background-color: #333;
+                background-color:green;
                 position: absolute;
                 top: 60px;
                 right: 20px;
                 padding: 10px;
             }
-
+            .navbar ul li a:hover{
+            background-color: #333;
+            }
             .navbar ul.active {
                 display: flex;
             }
