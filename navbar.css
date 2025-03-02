@@ -51,7 +51,8 @@ top: 0;
         /* Estilo responsivo */
         @media (max-width: 768px) {
             .navbar ul {
-                width: 60%;
+                width: 80%;
+                height: auto;
                 flex-direction: column;
                 display: none; /* Ocultar menú */
                 background-color:green;
@@ -60,9 +61,12 @@ top: 0;
                 right: 20px;
                 padding: 10px;
             }
+          .navbar ul li a{
+         padding: 16px 16px;
+        }
             .navbar ul li a:hover{
-                
-            background-color: #333;
+              color: #0047d4;  
+           
             }
             .navbar ul.active {
                 display: flex;
