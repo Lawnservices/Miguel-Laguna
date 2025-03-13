@@ -3,7 +3,7 @@ usa.forEach(colores =>{
 colores.style.fontSize = '20px';
 });
 
-setInterval(()=>{
+setTimeout(()=>{
  const tel = document.getElementsByClassName('tel');
  if(tel.length > 0){
   tel[0].style.color = 'blue';
@@ -11,7 +11,7 @@ setInterval(()=>{
  },7000)
  
 
-setInterval(()=>{
+setTimeout(()=>{
  let usas = document.querySelector('.servicio');
  usas.style.color = '#003349';
  usas.style.fontSize = '20px';

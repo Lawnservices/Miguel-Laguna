@@ -8,11 +8,4 @@ document.addEventListener('DOMContentLoaded', function(){
         document.getElementById("miFormulario").reset();
       }, 1000); // 1 segundo de espera antes de limpiar los campos (opcional)
     });
-
-
-
-
-
-
-
 });
