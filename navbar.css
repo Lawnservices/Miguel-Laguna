@@ -24,6 +24,9 @@ top: 0;
         .navbar .logo {
             font-size: 1.5rem;
             font-weight: bold;
+            font-family: 'Tangerine', serif;
+            font-size:44px;
+            text-shadow: 4px 4px 4px #aaa;
         }
 
         .navbar ul {
