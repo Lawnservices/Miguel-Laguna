@@ -87,3 +87,12 @@ top: 0;
             display: none;
             font-size: 1.5rem;
         }
+
+        .men{
+        color: #008cba;
+        padding: 16px;
+        text-transform: capitalize;
+        position: sticky;
+        top: 100px;
+        left: 0;
+        }
