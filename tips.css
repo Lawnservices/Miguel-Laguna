@@ -1,0 +1,23 @@
+.tips{
+width: 86%;
+margin-left: auto;
+margin-right: auto;
+background: linear-gradient(black 1.47% , white 87.47%); 
+padding: 20px;
+}
+.tips h1{
+text-align: center;
+color: #008bac;
+}
+.tips h2{
+text-align: justify;
+color: green;
+text-transform: capitalize;
+}
+.tips p{
+text-align: justify;
+text-transform: capitalize;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+color: brown;
+font-size: 20px;
+}
