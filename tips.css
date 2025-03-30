@@ -2,16 +2,20 @@
 width: 86%;
 margin-left: auto;
 margin-right: auto;
-background: linear-gradient(black 1.47% , white 87.47%); 
+background: linear-gradient(rgb(15, 112, 7) 1.47% , white 87.47%); 
 padding: 20px;
 }
-.tips h1{
+.tips .lawn{
 text-align: center;
-color: #008bac;
+color: rgb(82, 64, 58) ;
+font-weight: bold; 
+letter-spacing: 1.2px;
+border-bottom: 2px solid orange;
+border-bottom-width:thin;
 }
 .tips h2{
 text-align: justify;
-color: green;
+color: #fff;
 text-transform: capitalize;
 }
 .tips p{
@@ -20,4 +24,7 @@ text-transform: capitalize;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 color: brown;
 font-size: 20px;
+}
+.tips .control{
+color: green;
 }
