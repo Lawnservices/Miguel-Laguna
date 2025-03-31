@@ -28,3 +28,9 @@ font-size: 20px;
 .tips .control{
 color: green;
 }
+.nuevo{
+color: #008cba;
+text-transform: capitalize;
+letter-spacing: 1.6px;
+}
+ 
