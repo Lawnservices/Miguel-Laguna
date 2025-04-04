@@ -10,19 +10,19 @@ text-align: center;
 color: rgb(82, 64, 58) ;
 font-weight: bold; 
 letter-spacing: 1.2px;
-border-bottom: 2px solid orange;
+border-bottom: 2px solid rgb(10, 56, 173);
 border-bottom-width:thin;
 }
 .tips h2{
 text-align: justify;
-color: #fff;
+color: #052530;
 text-transform: capitalize;
 }
 .tips p{
 text-align: justify;
 text-transform: capitalize;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
-color: brown;
+color: rgb(63, 39, 39);
 font-size: 20px;
 }
 .tips .control{
