@@ -14,10 +14,12 @@ if (todayHours >= 18){
 document.getElementById('demo').textContent = greetin + ' ' + mensaje;
 
  
-const dias = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+setTimeout(() => {
+ const dias = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const day = dias [new Date().getDay()];
-const felis = 'Happy'
-document.getElementById('usa').textContent = felis + ' ' + day;
+const feliz = 'Happy'
+document.getElementById('usa').textContent = `${feliz} ${day}`;
+}, 9000);
  
  
  
