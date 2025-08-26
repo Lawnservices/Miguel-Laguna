@@ -17,8 +17,9 @@ document.getElementById('demo').textContent = greetin + ' ' + mensaje;
 setTimeout(() => {
  const dias = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const day = dias [new Date().getDay()];
-const feliz = 'Happy'
+const feliz = 'Happy';
 document.getElementById('usa').textContent = `${feliz} ${day}`;
+ 
 }, 9000);
  
  
