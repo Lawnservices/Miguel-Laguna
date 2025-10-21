@@ -24,11 +24,17 @@ display: grid;
 grid-template-columns: 1fr;
 gap:6px;
 text-align: center;
+background-image: url('https://lagunalawnservice.com/img/galeria11.jpg') ;
+background-size:cover;
+background-repeat: no-repeat;
+background-position: 50%;
 }
 
  .lista p {
-color: brown;
+color: rgb(7, 177, 140);
 text-transform: capitalize;
+font-weight: bolder;
+font-size: 26px;
 }
 
 @media (min-width:600px){
