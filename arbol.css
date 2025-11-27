@@ -43,3 +43,15 @@ display: flex;
 width: 100%;
 height: 100px;
 }
+#policy{
+text-align: center;
+width: 86%;
+margin-left: auto;
+margin-right: auto;
+}
+#policy h1{
+color: #051e63;
+}
+#policy p{
+color: #2e7d32;
+}
