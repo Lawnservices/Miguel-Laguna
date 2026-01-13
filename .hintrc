@@ -7,8 +7,16 @@
       "default",
       {
         "ignore": [
-          "iframe[allow]"
+          "iframe[allow]",
+          "iframe[loading]"
         ]
+      }
+    ],
+    "no-inline-styles": "off",
+    "axe/aria": [
+      "default",
+      {
+        "aria-required-children": "off"
       }
     ]
   }
