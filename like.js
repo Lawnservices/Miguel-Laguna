@@ -36,11 +36,11 @@ document.getElementById("likeBtn").onclick = async () => {
   const exists = await getDoc(ref);
 
   if (exists.exists()) {
-    alert("Ya diste like 👍");
+    alert("You already liked it. 👍");
     return;
   }
 
   await setDoc(ref, { fecha: Date.now() });
   loadLikes();
-  alert("¡Gracias por tu like! 🎉");
+  alert("Thank you for your like! 🎉");
 };
