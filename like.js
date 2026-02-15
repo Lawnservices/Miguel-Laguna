@@ -44,3 +44,11 @@ document.getElementById("likeBtn").onclick = async () => {
   loadLikes();
   alert("Thank you for your like! 🎉");
 };
+
+let colores = ['#22a6ce', '#0d1f3d','green','blue'];
+let index = 0;
+
+setInterval(() => {
+document.getElementById('likeBtn').style.backgroundColor = colores[index];
+index = (index + 1) % colores.length;
+}, 1000);
