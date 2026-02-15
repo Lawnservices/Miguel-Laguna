@@ -7,6 +7,7 @@
   <meta name="description" content="Miguel Laguna Lawn Services — Lawn mowing, leaf removal, mulch replacement, power washing, trimming of bushes. Serving Lanham, MD. Call (240) 883-8479" />
   <meta name="author" content="Miguel Laguna" />
   <link rel="icon" href="https://img.icons8.com/fluency/48/field.png" />
+  <link rel="stylesheet" href="styles.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1220857482303364"
      crossorigin="anonymous"></script>
   <!-- Structured data (local business) -->
@@ -43,72 +44,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- ====== Minimal modern CSS (inline for easy upload) ====== -->
-  <style>
-    :root{
-      --bg:#f6fbf5;
-      --card:#ffffff;
-      --accent:#1f8a3b;
-      --muted:#6b7280;
-      --max-w:1100px;
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      background:linear-gradient(180deg,var(--bg),#eef7ee 60%);
-      color:#0f172a;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.4;
-    }
-    .container{max-width:var(--max-w);margin:0 auto;padding:20px;}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo-circle{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,#eaf6ea,var(--card));display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(31,138,59,0.12)}
-    .logo-circle img{width:28px;height:28px}
-    h1.site-title{font-size:18px;margin:0;font-weight:700}
-    .tag{color:var(--muted);font-size:13px}
-    nav ul{display:flex;gap:16px;list-style:none;padding:0;margin:0}
-    nav a{color:var(--muted);text-decoration:none;font-weight:600}
-    .cta{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700;box-shadow:0 6px 18px rgba(31,138,59,0.15)}
-    /* Hero */
- 
-    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;margin-top:18px}
-    .hero-card{background:var(--card);padding:28px;border-radius:14px;box-shadow:0 8px 30px rgba(9,30,15,0.05)}
-    .hero h2{margin:0 0 10px;font-size:26px}
-    .hero p.lead{color:var(--muted);margin:0 0 14px}
-    .contact{display:flex;gap:12px;flex-wrap:wrap}
-    .phone{background:#f1fff3;padding:10px 12px;border-radius:10px;color:var(--accent);font-weight:700}
-    .hours{color:var(--muted);font-size:14px}
-    /* Services grid */
-    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:22px 0}
-    .service{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(11,20,12,0.03)}
-    .service h3{margin:0 0 8px;font-size:16px}
-    .service p{margin:0;color:var(--muted);font-size:14px}
-    /* Media: images + video */
-    .media-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
-    .media img{width:100%;height:220px;object-fit:cover;border-radius:10px}
-    .video-card{border-radius:10px;overflow:hidden;box-shadow:0 8px 24px rgba(7,12,8,0.06)}
-    iframe{width:100%;height:100%;min-height:250px;border:0;display:block}
-    /* Tips & CTA */
-    .tips{display:flex;gap:18px;margin:20px 0;flex-wrap:wrap}
-    .tip{flex:1;min-width:220px;background:linear-gradient(180deg,#fff,#f8fff9);padding:16px;border-radius:12px;box-shadow:0 6px 20px rgba(11,20,12,0.03)}
-    .footer{margin-top:34px;padding:18px 0;border-top:1px solid #e6efe6;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-    /* Responsive */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr}
-      .services{grid-template-columns:repeat(2,1fr)}
-      .media-grid{grid-template-columns:1fr}
-    }
-    @media (max-width:560px){
-      nav ul{display:none}
-      .cta{display:none}
-      .services{grid-template-columns:1fr}
-    }
-    /* small helpers */
-    .muted{color:var(--muted)}
-    .badge{background:#e9f8ea;color:var(--accent);padding:6px 8px;border-radius:8px;font-weight:700;font-size:13px}
-  </style>
+   
   <link rel="stylesheet" href="like.css">
 </head>
 <body>
@@ -278,16 +214,7 @@
   </script>
 
   <!-- KEEP: external scripts you still want (deferred recommended) -->
-  <!-- Example: Your existing site script files (defer to avoid blocking) -->
-  <!-- <script src="js/script.js" defer></script> -->
-
-  <!-- NOTES:
-     1) The YouTube iframe 'allow' attribute has been simplified to avoid "Feature Policy: Skipping unsupported feature name" warnings.
-     2) If your server was adding a Feature-Policy header (old), ask your host to remove it or replace it with Permissions-Policy in server config:
-        Permissions-Policy: interest-cohort=()
-        (Other Permissions-Policy directives must be set as HTTP headers on the server side.)
-     3) To further speed up: optimize images to WebP and enable gzip/brotli on the server.
-  -->
+ 
   <script type="module" src="like.js"></script>
 </body>
 </html>
