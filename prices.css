@@ -11,7 +11,11 @@ background-color: #3e8e41;
 color: #fff;
 }
 .fotos{
+transition: 1s;
+}
+.fotos{
     display: none;
+     
 } 
 .servicio{
     text-align: center;
