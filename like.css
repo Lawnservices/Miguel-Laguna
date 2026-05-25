@@ -1,0 +1,14 @@
+#like-web{
+max-width: 1000px;
+margin: 24px auto;
+ 
+}
+#like-web #likeBtn{
+font-size: 22px;
+border: none;
+border-radius: 0.2rem;
+color: white;
+background-color: #061120;
+padding: 6px;
+cursor: pointer;
+}

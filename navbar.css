@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
     margin: 0;
 
@@ -65,3 +66,103 @@ body{
     display: none;
     font-size: 1.5rem;
 }
+=======
+.ariva{
+/* background: linear-gradient(90deg,#27CF9C 1.47%, #3a98fb 98.72%); */
+background: linear-gradient(90deg, white  1.47%, rgb(26, 70, 40)  88.72%);
+position:-webkit-sticky;
+position: sticky;
+top: 0;
+}
+        /* Estilos del navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+           
+            padding: 10px 20px;
+            color: white;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            position:-webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-family: 'Tangerine', serif;
+            font-size:44px;
+            text-shadow: 4px 4px 4px #aaa;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size:20px;
+            transition: color 0.3s;
+
+        }
+
+        .navbar ul li a:hover {
+            color: #00d451;
+        }
+
+        /* Estilo responsivo */
+        @media (max-width: 768px) {
+            .navbar ul {
+                width: 80%;
+                height: auto;
+                flex-direction: column;
+                display: none; /* Ocultar menú */
+                background-color:green;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                padding: 10px;
+            }
+          .navbar ul li a{
+         padding: 16px 16px;
+        }
+            .navbar ul li a:hover{
+              color: #0047d4;  
+           
+            }
+            .navbar ul.active {
+                display: flex;
+            }
+
+            .navbar .menu-toggle {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        /* Estilo para el botón del menú */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+        }
+
+        .men{
+        color: #008cba;
+        padding: 16px;
+        text-transform: capitalize;
+        position: sticky;
+        top: 100px;
+        left: 0;
+        }
+>>>>>>> e8f5b1dd9dc22425695a453fbfc4b71637897f5c

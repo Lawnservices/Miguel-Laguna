@@ -19,4 +19,8 @@ function setCookie(nombre, valor, diasExpiracion) {
                     setCookie("aceptoCookies", "true", 365);  
                 }
             }
+<<<<<<< HEAD
         }
+=======
+        }
+>>>>>>> e8f5b1dd9dc22425695a453fbfc4b71637897f5c

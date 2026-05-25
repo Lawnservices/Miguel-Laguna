@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 google.com, pub-4007547067098323, DIRECT, f08c47fec0942fa0
+=======
+google.com, pub-1220857482303364, DIRECT, f08c47fec0942fa0
+>>>>>>> e8f5b1dd9dc22425695a453fbfc4b71637897f5c
