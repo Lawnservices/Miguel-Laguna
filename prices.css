@@ -1,90 +1,109 @@
-#principal {
-    background-color: #0366d6;
-    color: #fff;
+#principal{
+    background-color:#0366d6;
+    color:#fff;
 }
+
 #principal .id-s{
-    background-color: #154;
-    color: #fff;
+    background-color:#154;
+    color:#fff;
 }
+
 #principal .services{
-background-color: #3e8e41;
-color: #fff;
+    background-color:#3e8e41;
+    color:#fff;
 }
+
 .fotos{
-transition: 1s;
+    transition:1s;
+    display:none;
 }
-.fotos{
-    display: none;
-     
-} 
+
 .servicio{
-    text-align: center;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    color: #154;
-    font-size: 18px;
-    display: none;
-    
-}
-.nombre {
-    text-align: center;
+    text-align:center;
+    font-family:Verdana,Geneva,Tahoma,sans-serif;
+    font-weight:bold;
+    color:#154;
+    font-size:18px;
+    display:none;
 }
 
-.nombre span {
-    color: #0366d6;
+.nombre{
+    text-align:center;
 }
 
-.nombre b {
-    color: rgba(22, 191, 166, 0.8);
+.nombre span{
+    color:#0366d6;
 }
 
-.nombre a {
-    text-decoration: none;
-    color: #04aa6b;
-    font-size: 1.4rem;
+.nombre b{
+    color:rgba(22,191,166,0.8);
 }
 
-table {
-    border-collapse: collapse;
+.nombre a{
+    text-decoration:none;
+    color:#04aa6b;
+    font-size:1.4rem;
 }
 
-.titulo {
-    color: #154;
-    font-size: 1.2rem;
-    text-align: start;
-    padding: 6px;
-    
+.tabla-container{
+    width:100%;
+    overflow-x:auto;
 }
+
+table{
+    border-collapse:collapse;
+    width:100%;
+    max-width:1200px;
+    margin:40px auto 24px;
+}
+
+.titulo{
+    color:#154;
+    font-size:1.2rem;
+    text-align:start;
+    padding:6px;
+}
+
 .titulos{
-    background-color: #333;
-}
-table,
-th,
-td {
-    border: 1px solid #154;
-    padding: 12px 12px;
-     
-}
-td{
-    text-align: justify;
-}
-table {
-    width: 80%;
-    margin-left: 10%;
-    text-align: center;
-    margin-top: 40px;
+    background-color:#333;
+    color:white;
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+table,th,td{
+    border:1px solid #154;
+    padding:12px;
 }
+
+td{
+    text-align:justify;
+}
+
+tr:nth-child(even){
+    background-color:#f2f2f2;
+}
+
+
 @media(max-width:600px){
+
     .contato{
-    display: none;
+        display:none;
     }
+
     #contenido{
-    width: 98%;
-    margin-left: auto;
-    margin-right: auto;
+        width:100%;
+        margin:20px auto;
+        padding:0 10px;
     }
-  }
+
+    table{
+        font-size:14px;
+    }
+
+    th,td{
+        padding:8px;
+    }
+
+    .nombre a{
+        font-size:1.1rem;
+    }
+}
