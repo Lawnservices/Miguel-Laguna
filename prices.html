@@ -31,91 +31,26 @@
    Business Hours: Monday to Friday 07:00 AM to 04:00 PM
 </div>   
       
+<div class="container">
+       
 
-      <table id="contenido">
+        <table>
         <caption class="titulo">
           THE BEST PRICES IN THE AREA.
         </caption>
-
-        <tr id="principal">
-          <th class="id-s">id-S</th>
-          <th class="services">Services</th>
-          <th>Prices starts</th>
-        </tr>
-        <tr>
-          <td>
-            <img alt="foto-icons" src="https://img.icons8.com/fluency/28/null/sakura.png" class="fotos" loading="lazy" />
-          </td>
-          <td class="uno">Planting Flowers</td>
-
-          <td class="uno"> $360</td>
-        </tr>
-        <tr>
-          <td>
-            <img  class="fotos"  alt="foto-icons" src="https://img.icons8.com/external-basicons-line-edtgraphics/28/null/external-bath-signs-basicons-line-edtgraphics.png" loading="lazy"  />
-          </td>
-          <td class="dos">Power Washing</td>
-          <td class="dos">$360</td>
-        </tr>
-        <tr>
-          <td>
-            <img  class="fotos"  alt="foto-icons" src="https://img.icons8.com/color/28/null/lawn-mower.png" loading="lazy" />
-          </td>
-          <td class="tres">Lawn Mowing</td>
-          <td class="tres"> $80</td>
-        </tr>
-        <tr>
-          <td>
-            <img  class="fotos"  alt="foto-icons" src="https://img.icons8.com/ios/28/null/yard-work.png" loading="lazy" />
-          </td>
-          <td class="cuatro">Yard Clean-Up</td>
-          <td class="cuatro">$380</td>
-        </tr>
-        <tr>
-          <td>
-            <img  class="fotos"  alt="foto-icons" src="https://img.icons8.com/emoji/28/null/maple-leaf-emoji.png" loading="lazy" />
-          </td>
-          <td class="cinco">Leaf Removal</td>
-          <td class="cinco">$260</td>
-        </tr>
-        <tr>
-          <td>
-            <img  class="fotos"  alt="foto-icons" src="https://img.icons8.com/external-flaticons-flat-flat-icons/28/null/external-fertilization-plants-flaticons-flat-flat-icons.png" loading="lazy" />
-          </td>
-          <td class="seis">Fertilization</td>
-          <td class="seis">$160</td>
-        </tr>
-        <tr>
-          <td>
-            <img  class="fotos"  width="28" height="28" src="https://img.icons8.com/external-vectorslab-glyph-vectorslab/28/external-Mulch-construction-vectorslab-glyph-vectorslab.png" alt="external-Mulch-construction-vectorslab-glyph-vectorslab" loading="lazy" />
-          </td>
-          <td class="siete">Mulch Replacement</td>
-          <td class="siete"> $260</td>
-        </tr>
-        <tr>
-          <td>
-            <img  class="fotos"  width="28" height="28" src="https://img.icons8.com/color/48/bush.png" alt="bush" loading="lazy" />
-          </td>
-          <td class="ocho">Trimming of Bushes</td>
-          <td class="ocho">$250</td>
-        </tr>
-        <tr>
-          <td>
-            <img  class="fotos"  width="28" height="28" loading="lazy" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-sprayer-farm-flaticons-flat-flat-icons.png" alt="external-sprayer-farm-flaticons-flat-flat-icons" />
-          </td>
-          <td class="nueve">Weed Control</td>
-          <td class="nueve">$160</td>
-        </tr>
-         <tr></tr>
-          <td>
-            <img  class="fotos"  width="28" height="28" loading="lazy" src="https://img.icons8.com/external-basicons-color-edtgraphics/50/external-Seeds-agriculture-basicons-color-edtgraphics.png" alt="external-sprayer-farm-flaticons-flat-flat-icons" />
-          </td>
-          <td class="dies">sowing grass seeds</td>
-          <td class="dies">$300</td>
-        </tr>
-      </table>
-
+            <thead>
+                <tr>
+                    <th>Icon</th>
+                    <th>Services</th>
+                    <th>Description</th>
+                    <th>Prices</th>
+                </tr>
+            </thead>
+            <tbody id="servicesTable"></tbody>
+        </table>
     </div>
+      
+   
  
   <footer class="w3-container w3-green">
   <p>©<em id="year"></em>Miguel Laguna Lawn Services. All Rights Reserved.</p>
@@ -123,6 +58,33 @@
 <script src="script/script.js"></script>
 <script src="saludo/script.js"></script>
 <script src="mesa.js"></script>
+ <script>
+        async function loadServices() {
+            const table = document.getElementById("servicesTable");
+
+            try {
+                const res = await fetch("https://www.creantunegocio.com/api/services");
+                const data = await res.json();
+
+                table.innerHTML = "";
+
+                data.services.forEach(s => {
+                    table.innerHTML += `
+<tr>
+<td><img class="icon" src="${s.icon || 'https://via.placeholder.com/45'}"></td>
+<td><b>${s.service}</b></td>
+<td>${s.description || "Professional lawn service"}</td>
+<td class="price">$${s.price}</td>
+</tr>`;
+                });
+
+            } catch (e) {
+                table.innerHTML = '<tr><td colspan="4">Error loading services</td></tr>';
+            }
+        }
+
+        loadServices();
+    </script>
 </body>
 
 </html>
