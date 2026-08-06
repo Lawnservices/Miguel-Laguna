@@ -47,6 +47,7 @@
 
 .tabla-container{
     width:100%;
+    min-height: 800px;
     overflow-x:auto;
 }
 
