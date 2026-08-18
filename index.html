@@ -101,7 +101,7 @@
 
     <form action="https://www.creantunegocio.com/cliente" method="POST">
         
-        <input type="tel" name="tel" autocomplete="on" value="" pattern="[0-9]{10}" placeholder="Phone number" required="">
+        <input type="tel" name="tel" autocomplete="on" value="" pattern="[0-9\- ]+" maxlength="10" placeholder="Phone number" required="" autofocus>
 
         <button type="submit">
             Subscribe 
