@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-   <link rel="shortcut icon" href="https://img.icons8.com/fluency/48/gmail.png" type="image/x-icon">
-    
-   
-  <link rel="stylesheet" href="contact.css">
-  <title>Contact Us</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description" content="lawn mowing, lahnam md, miguel laguna, leaf removal, the best prices in thr area">
+     <meta name="author" content="Miguel Laguna">
+     <link rel="shortcut icon" href="https://img.icons8.com/liquid-glass/48/chat-message.png" type="image/x-icon">
+    <link rel="stylesheet" href="contact.css">
+    <title>Request a Free Estimate</title>
 </head>
 <body>
-     <div class="contenedor">
-    <h1>Call Now 240-883-8479</h1>
-    <p>THE BEST PRICES IN THE AREA.</p>
-      <p>Lawn Services in Lanham MD</p>
-    <a href="/index">Home Page.</a>
-   
-  </div>
- 
-  <script src="contact.js"></script>
-  
-  <script src="saludo/script.js"></script>
+     <header>
+       <a href="/index"><p>THE BEST PRICES IN THE AREA.</p></a>  
+     </header>
+    <h1>Request a Free Estimate</h1>
+    <h2>Fill out the form below and we'll contact you as soon as possible.</h2>
+    <form action="https://www.creantunegocio.com/mensaje" method="POST">
+        <input type="text" name="name" id="name" placeholder="Name" required   pattern="[A-Za-z\s]+" title="Only letters allowed" maxlength="30">
+        <input type="tel" name="tel" id="tel" placeholder="Phone Number" required inputmode="numeric" pattern="[0-9]+" maxlength="10">
+        <input type="text" name="message" id="message" placeholder="Send Message" maxlength="100" required>
+        <button type="submit">Enviar</button>
+    </form>
+     <footer>
+        <p id="one"></p>
+    </footer>
+    <script src="contact.js"></script>
 </body>
 </html>
