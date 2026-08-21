@@ -387,90 +387,129 @@
            AUTOPLAY TIPO TIKTOK
         ================================= */
 
-        function iniciarReproduccion() {
+       function iniciarReproduccion() {
 
-            const videos =
-                document.querySelectorAll(".short-video");
+    const videos = document.querySelectorAll(".short-video");
 
-
-            const observer =
-                new IntersectionObserver(
-
-                    entries => {
-
-                        entries.forEach(entry => {
-
-                            const video =
-                                entry.target;
+    let audioActivado = false;
 
 
-                            if (
-                                entry.isIntersecting &&
-                                entry.intersectionRatio >= 0.75
-                            ) {
+    /* =================================
+       TOCAR EL PRIMER VIDEO
+    ================================= */
 
-                                videos.forEach(otherVideo => {
+    videos.forEach(video => {
 
-                                    if (
-                                        otherVideo !== video
-                                    ) {
+        video.addEventListener("click", () => {
 
-                                        otherVideo.pause();
+            audioActivado = true;
 
-                                    }
+            videos.forEach(otherVideo => {
 
-                                });
-
-
-                                video.muted = true;
-
-
-                                video.play().catch(() => {
-
-                                    console.log(
-                                        "Autoplay bloqueado"
-                                    );
-
-                                });
-
-                            } else {
-
-                                video.pause();
-
-                            }
-
-                        });
-
-                    },
-
-                    {
-                        threshold: [0.75]
-                    }
-
-                );
-
-
-            videos.forEach(video => {
-
-                observer.observe(video);
-
-
-                /* Al terminar vuelve a comenzar */
-
-                video.addEventListener(
-                    "ended",
-                    () => {
-
-                        video.currentTime = 0;
-
-                        video.play().catch(() => {});
-
-                    }
-                );
+                if (otherVideo !== video) {
+                    otherVideo.pause();
+                }
 
             });
 
+            video.muted = false;
+
+            video.play().catch(() => {});
+
+        });
+
+    });
+
+
+    /* =================================
+       SCROLL - TIKTOK
+    ================================= */
+
+    const observer = new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                const video = entry.target;
+
+
+                if (
+                    entry.isIntersecting &&
+                    entry.intersectionRatio >= 0.75
+                ) {
+
+                    /* Pausar los demás */
+
+                    videos.forEach(otherVideo => {
+
+                        if (otherVideo !== video) {
+                            otherVideo.pause();
+                        }
+
+                    });
+
+
+                    /*
+                       Si el usuario ya tocó
+                       el primer video,
+                       los siguientes tienen audio.
+                    */
+
+                    if (audioActivado) {
+
+                        video.muted = false;
+
+                    } else {
+
+                        video.muted = true;
+
+                    }
+
+
+                    video.play().catch(() => {});
+
+                }
+
+
+                else {
+
+                    video.pause();
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: [0.75]
         }
+
+    );
+
+
+    /* Observar todos los videos */
+
+    videos.forEach(video => {
+
+        observer.observe(video);
+
+
+        /* Reiniciar cuando termina */
+
+        video.addEventListener("ended", () => {
+
+            video.currentTime = 0;
+
+            video.play().catch(() => {});
+
+        });
+
+    });
+
+}
+        
 
 
         /* =================================
