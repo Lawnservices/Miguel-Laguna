@@ -763,9 +763,82 @@ document.addEventListener("keydown", event => {
 
 });
 
+
+
+/* =================================
+   BARRA ESPACIADORA = PLAY / PAUSA
+================================= */
+
+document.addEventListener("keydown", event => {
+
+    if (event.code !== "Space") {
+        return;
+    }
+
+    event.preventDefault();
+
+    const videos =
+        document.querySelectorAll(".short-video");
+
+    if (!videos.length) {
+        return;
+    }
+
+    let videoActual = null;
+    let distanciaMenor = Infinity;
+
+    const centroPantalla =
+        window.innerHeight / 2;
+
+    videos.forEach(video => {
+
+        const rect =
+            video.getBoundingClientRect();
+
+        const centroVideo =
+            rect.top + rect.height / 2;
+
+        const distancia =
+            Math.abs(centroVideo - centroPantalla);
+
+        if (distancia < distanciaMenor) {
+
+            distanciaMenor = distancia;
+            videoActual = video;
+
+        }
+
+    });
+
+    if (!videoActual) {
+        return;
+    }
+
+
+    /* PAUSAR */
+
+    if (!videoActual.paused) {
+
+        videoActual.pause();
+
+        return;
+    }
+
+
+    /* PLAY */
+
+    videoActual.muted = !audioActivado;
+
+    videoActual.play().catch(() => {});
+
+});
         /*
         =================================
         INICIAR
+
+
+
+        
         =================================
         */
 
