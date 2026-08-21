@@ -1,823 +1,494 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-    <title>Videos</title>
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-
-
-        /* =================================
-           FEED
-        ================================= */
-
-        #video-feed {
-            width: 100%;
-            height: 100dvh;
-
-            overflow-y: auto;
-            overflow-x: hidden;
-
-            scroll-snap-type: y mandatory;
-
-            background: #000;
-
-            scrollbar-width: none;
-
-            -webkit-overflow-scrolling: touch;
-        }
-
-        #video-feed::-webkit-scrollbar {
-            display: none;
-        }
-
-
-        /* =================================
-           CADA VIDEO
-        ================================= */
-
-        .video-container {
-            position: relative;
-
-            width: 100vw;
-            height: 100dvh;
-
-            overflow: hidden;
-
-            background: #000;
-
-            scroll-snap-align: start;
-            scroll-snap-stop: always;
-        }
-
-
-        /* =================================
-           VIDEO
-        ================================= */
-
-        .short-video {
-            position: absolute;
-
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 100%;
-
-            display: block;
-
-            object-fit: cover;
-
-            margin: 0;
-            padding: 0;
-
-            border: 0;
-            border-radius: 0;
-
-            background: #000;
-        }
-
-
-        /* =================================
-           INFORMACIÓN
-        ================================= */
-
-        .video-info {
-            position: absolute;
-
-            left: 20px;
-            right: 20px;
-            bottom: 35px;
-
-            z-index: 10;
-
-            color: white;
-
-            text-align: left;
-
-            pointer-events: none;
-
-            text-shadow:
-                0 2px 5px rgba(0, 0, 0, .9),
-                0 2px 15px rgba(0, 0, 0, .8);
-        }
-
-        .video-info h3 {
-            margin: 0 0 8px;
-
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .video-info p {
-            margin: 0;
-
-            font-size: 15px;
-
-            line-height: 1.4;
-        }
-
-
-        /* =================================
-           CARGANDO
-        ================================= */
-
-        .loading {
-            position: fixed;
-
-            inset: 0;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            background: #000;
-
-            color: white;
-
-            font-size: 18px;
-
-            z-index: 100;
-        }
-
-
-        /* =================================
-           ERROR
-        ================================= */
-
-        .error {
-            height: 100dvh;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            padding: 20px;
-
-            color: white;
-
-            text-align: center;
-        }
-
-
-        /* =================================
-           PC
-        ================================= */
-
-        @media (min-width: 769px) {
-
-            body {
-                overflow: auto;
-            }
-
-            #video-feed {
-                height: auto;
-
-                overflow: visible;
-
-                scroll-snap-type: none;
-
-                padding: 20px 0;
-            }
-
-            .video-container {
-                width: 620px;
-                height: 85vh;
-
-                margin: 0 auto 40px;
-
-                scroll-snap-align: none;
-
-                border-radius: 12px;
-            }
-
-            .short-video {
-                border-radius: 12px;
-            }
-
-            .video-info {
-                bottom: 20px;
-            }
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Videos</title>
+
+<style>
+*{box-sizing:border-box}
+
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    background:#000;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    overflow:hidden;
+}
+
+#video-feed{
+    width:100%;
+    height:100dvh;
+    overflow-y:auto;
+    overflow-x:hidden;
+    scroll-snap-type:y mandatory;
+    background:#000;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+}
+
+#video-feed::-webkit-scrollbar{
+    display:none;
+}
+
+.video-container{
+    position:relative;
+    width:100vw;
+    height:100dvh;
+    overflow:hidden;
+    background:#000;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+}
+
+.short-video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    margin:0;
+    padding:0;
+    border:0;
+    border-radius:0;
+    background:#000;
+}
+
+.video-info{
+    position:absolute;
+    left:20px;
+    right:20px;
+    bottom:35px;
+    z-index:10;
+    color:#fff;
+    text-align:left;
+    pointer-events:none;
+    text-shadow:0 2px 5px rgba(0,0,0,.9),0 2px 15px rgba(0,0,0,.8);
+}
+
+.video-info h3{
+    margin:0 0 8px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.video-info p{
+    margin:0;
+    font-size:15px;
+    line-height:1.4;
+}
+
+.loading{
+    position:fixed;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#000;
+    color:#fff;
+    font-size:18px;
+    z-index:100;
+}
+
+.error{
+    height:100dvh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    color:#fff;
+    text-align:center;
+}
+
+@media (min-width:769px){
+    body{
+        overflow:auto;
+    }
+
+    #video-feed{
+        height:auto;
+        overflow:visible;
+        scroll-snap-type:none;
+        padding:20px 0;
+    }
+
+    .video-container{
+        width:620px;
+        height:85vh;
+        margin:0 auto 40px;
+        scroll-snap-align:none;
+        border-radius:12px;
+    }
+
+    .short-video{
+        border-radius:12px;
+    }
+
+    .video-info{
+        bottom:20px;
+    }
+}
+</style>
 </head>
-
 
 <body>
 
+<div id="loading" class="loading">
+    Cargando videos...
+</div>
 
-    <!-- CARGANDO -->
+<main id="video-feed"></main>
 
-    <div id="loading" class="loading">
-        Cargando videos...
-    </div>
+<script>
 
+const API_URL="https://www.creantunegocio.com/api/videos";
+const feed=document.getElementById("video-feed");
+const loading=document.getElementById("loading");
 
-    <!-- FEED -->
-
-    <main id="video-feed"></main>
-
-
-    <script>
-
-        const API_URL =
-            "https://www.creantunegocio.com/api/videos";
+let audioActivado=false;
 
 
-        const feed =
-            document.getElementById("video-feed");
+/* =================================
+   CARGAR VIDEOS
+================================= */
+
+async function cargarVideos(){
+
+    try{
+
+        const respuesta=await fetch(API_URL);
+
+        if(!respuesta.ok){
+            throw new Error("Error HTTP: "+respuesta.status);
+        }
+
+        const videos=await respuesta.json();
+
+        loading.remove();
+
+        if(!Array.isArray(videos)||videos.length===0){
+
+            feed.innerHTML=`
+                <div class="error">
+                    <h2>No hay videos todavía</h2>
+                </div>
+            `;
+
+            return;
+        }
+
+        videos.forEach(video=>{
+
+            const container=document.createElement("div");
+
+            container.className="video-container";
+
+            container.innerHTML=`
+
+                <video
+                    class="short-video"
+                    poster="${video.thumbnail||""}"
+                    playsinline
+                    webkit-playsinline
+                    muted
+                    loop
+                    controls
+                    preload="metadata">
+
+                    <source
+                        src="${video.url_video}"
+                        type="video/mp4">
+
+                </video>
+
+                <div class="video-info">
+
+                    <h3>
+                        🌱 ${escapeHTML(video.titulo||"")}
+                    </h3>
+
+                    <p>
+                        ${escapeHTML(video.descripcion||"")}
+                    </p>
+
+                </div>
+            `;
+
+            feed.appendChild(container);
+
+        });
+
+        iniciarReproduccion();
+
+    }catch(error){
+
+        console.error(error);
+
+        loading.remove();
+
+        feed.innerHTML=`
+
+            <div class="error">
+
+                <div>
+
+                    <h2>No se pudieron cargar los videos</h2>
+
+                    <p>${escapeHTML(error.message)}</p>
+
+                </div>
+
+            </div>
+        `;
+    }
+}
 
 
-        const loading =
-            document.getElementById("loading");
+/* =================================
+   PROTEGER HTML
+================================= */
+
+function escapeHTML(text){
+
+    const div=document.createElement("div");
+
+    div.textContent=text;
+
+    return div.innerHTML;
+}
 
 
-        /*
-        =================================
-        ESTADO DEL AUDIO
+/* =================================
+   REPRODUCCIÓN TIPO TIKTOK
+================================= */
 
-        false = todavía no ha tocado ningún video
-        true  = el usuario ya activó el audio
-        =================================
-        */
+function iniciarReproduccion(){
 
-        let audioActivado = false;
+    const videos=document.querySelectorAll(".short-video");
 
 
+    /* =================================
+       CLICK EN VIDEO = ACTIVAR AUDIO
+    ================================= */
 
-        /*
-        =================================
-        CARGAR VIDEOS
-        =================================
-        */
+    videos.forEach(video=>{
 
-        async function cargarVideos() {
+        video.addEventListener("click",()=>{
 
-            try {
+            audioActivado=true;
 
-                const respuesta =
-                    await fetch(API_URL);
+            videos.forEach(otroVideo=>{
 
-
-                if (!respuesta.ok) {
-
-                    throw new Error(
-                        "Error HTTP: " + respuesta.status
-                    );
-
+                if(otroVideo!==video){
+                    otroVideo.pause();
                 }
 
+            });
 
-                const videos =
-                    await respuesta.json();
+            video.muted=false;
 
+            video.play().catch(()=>{});
 
-                loading.remove();
+        });
 
-
-                if (
-                    !Array.isArray(videos) ||
-                    videos.length === 0
-                ) {
-
-                    feed.innerHTML = `
-                        <div class="error">
-                            <h2>No hay videos todavía</h2>
-                        </div>
-                    `;
-
-                    return;
-
-                }
+    });
 
 
-                /*
-                =================================
-                CREAR LOS VIDEOS
-                =================================
-                */
+    /* =================================
+       DETECTAR VIDEO VISIBLE
+    ================================= */
 
-                videos.forEach(video => {
+    const observer=new IntersectionObserver(entries=>{
 
+        entries.forEach(entry=>{
 
-                    const container =
-                        document.createElement("div");
+            const video=entry.target;
 
+            if(entry.isIntersecting&&entry.intersectionRatio>=0.75){
 
-                    container.className =
-                        "video-container";
+                videos.forEach(otroVideo=>{
 
-
-                    container.innerHTML = `
-
-                        <video
-                            class="short-video"
-                            poster="${video.thumbnail || ""}"
-                            playsinline
-                            webkit-playsinline
-                            muted
-                            loop
-                            controls
-                            preload="metadata">
-
-                            <source
-                                src="${video.url_video}"
-                                type="video/mp4">
-
-                        </video>
-
-                        <div class="video-info">
-
-                            <h3>
-                                🌱 ${escapeHTML(video.titulo || "")}
-                            </h3>
-
-                            <p>
-                                ${escapeHTML(video.descripcion || "")}
-                            </p>
-
-                        </div>
-
-                    `;
-
-
-                    feed.appendChild(container);
+                    if(otroVideo!==video){
+                        otroVideo.pause();
+                    }
 
                 });
 
+                video.muted=!audioActivado;
 
-                /*
-                =================================
-                INICIAR SISTEMA DE REPRODUCCIÓN
-                =================================
-                */
+                video.play().catch(()=>{});
 
-                iniciarReproduccion();
+            }else{
 
-
-            } catch (error) {
-
-
-                console.error(error);
-
-
-                loading.remove();
-
-
-                feed.innerHTML = `
-
-                    <div class="error">
-
-                        <div>
-
-                            <h2>
-                                No se pudieron cargar los videos
-                            </h2>
-
-                            <p>
-                                ${escapeHTML(error.message)}
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                `;
+                video.pause();
 
             }
 
-        }
+        });
 
+    },{
+        threshold:0.75
+    });
 
 
-        /*
-        =================================
-        PROTEGER TEXTO HTML
-        =================================
-        */
+    videos.forEach(video=>{
 
-        function escapeHTML(text) {
+        observer.observe(video);
 
-            const div =
-                document.createElement("div");
 
+        /* =================================
+           CUANDO TERMINA
+        ================================= */
 
-            div.textContent =
-                text;
+        video.addEventListener("ended",()=>{
 
+            video.currentTime=0;
 
-            return div.innerHTML;
+            video.muted=!audioActivado;
 
-        }
+            video.play().catch(()=>{});
 
+        });
 
+    });
 
-        /*
-        =================================
-        SISTEMA TIPO TIKTOK
-        =================================
-        */
+}
 
-        function iniciarReproduccion() {
-
-
-            const videos =
-                document.querySelectorAll(".short-video");
-
-
-            /*
-            =================================
-            TOCAR CUALQUIER VIDEO
-
-            El primer toque del usuario
-            activa el sonido.
-            =================================
-            */
-
-            videos.forEach(video => {
-
-
-                video.addEventListener("click", () => {
-
-
-                    /*
-                    ACTIVAR AUDIO
-                    */
-
-                    audioActivado = true;
-
-
-                    /*
-                    PAUSAR LOS DEMÁS
-                    */
-
-                    videos.forEach(otroVideo => {
-
-                        if (otroVideo !== video) {
-
-                            otroVideo.pause();
-
-                        }
-
-                    });
-
-
-                    /*
-                    QUITAR MUTE
-                    */
-
-                    video.muted = false;
-
-
-                    /*
-                    REPRODUCIR
-                    */
-
-                    video.play().catch(() => {});
-
-
-                });
-
-            });
-
-
-
-            /*
-            =================================
-            DETECTAR VIDEO VISIBLE
-            =================================
-            */
-
-            const observer =
-                new IntersectionObserver(
-
-                    entries => {
-
-
-                        entries.forEach(entry => {
-
-
-                            const video =
-                                entry.target;
-
-
-
-                            /*
-                            =================================
-                            VIDEO VISIBLE
-                            =================================
-                            */
-
-                            if (
-                                entry.isIntersecting &&
-                                entry.intersectionRatio >= 0.75
-                            ) {
-
-
-                                /*
-                                PAUSAR TODOS LOS DEMÁS
-                                */
-
-                                videos.forEach(otroVideo => {
-
-                                    if (otroVideo !== video) {
-
-                                        otroVideo.pause();
-
-                                    }
-
-                                });
-
-
-
-                                /*
-                                =================================
-                                AUDIO
-                                =================================
-
-                                Si el usuario ya tocó un video,
-                                el siguiente video tendrá audio.
-
-                                Si todavía no ha tocado nada,
-                                permanece muteado.
-                                =================================
-                                */
-
-                                if (audioActivado) {
-
-                                    video.muted = false;
-
-                                } else {
-
-                                    video.muted = true;
-
-                                }
-
-
-
-                                /*
-                                REPRODUCIR VIDEO
-                                */
-
-                                video.play().catch(() => {});
-
-
-                            }
-
-
-                            /*
-                            =================================
-                            VIDEO FUERA DE PANTALLA
-                            =================================
-                            */
-
-                            else {
-
-                                video.pause();
-
-                            }
-
-                        });
-
-                    },
-
-                    {
-                        threshold: 0.75
-                    }
-
-                );
-
-
-
-            /*
-            =================================
-            OBSERVAR TODOS LOS VIDEOS
-            =================================
-            */
-
-            videos.forEach(video => {
-
-
-                observer.observe(video);
-
-
-
-                /*
-                =================================
-                CUANDO TERMINE
-
-                Volver a empezar.
-                =================================
-                */
-
-                video.addEventListener(
-                    "ended",
-                    () => {
-
-
-                        video.currentTime = 0;
-
-
-                        /*
-                        Mantener el estado
-                        del audio.
-                        */
-
-                        video.muted =
-                            !audioActivado;
-
-
-                        video.play().catch(() => {});
-
-
-                    }
-                );
-
-
-            });
-
-        }
 
 /* =================================
-   FLECHAS DEL TECLADO EN PC
-/* =================================
-   FLECHAS ↑ ↓ EN PC
+   FLECHAS ↑ ↓
 ================================= */
 
-document.addEventListener("keydown", event => {
+document.addEventListener("keydown",event=>{
 
-    if (
-        event.key !== "ArrowDown" &&
-        event.key !== "ArrowUp"
-    ) {
+    if(event.key!=="ArrowDown"&&event.key!=="ArrowUp"){
         return;
     }
 
-    const containers =
-        document.querySelectorAll(".video-container");
+    const containers=document.querySelectorAll(".video-container");
 
-    if (!containers.length) {
+    if(!containers.length){
         return;
     }
 
     event.preventDefault();
 
-    let actual = 0;
-    let distanciaMenor = Infinity;
+    let actual=0;
+    let distanciaMenor=Infinity;
 
-    const centroPantalla =
-        window.innerHeight / 2;
+    const centroPantalla=window.innerHeight/2;
 
-    containers.forEach((container, index) => {
+    containers.forEach((container,index)=>{
 
-        const rect =
-            container.getBoundingClientRect();
+        const rect=container.getBoundingClientRect();
 
-        const centroVideo =
-            rect.top + rect.height / 2;
+        const centroVideo=rect.top+(rect.height/2);
 
-        const distancia =
-            Math.abs(centroVideo - centroPantalla);
+        const distancia=Math.abs(centroVideo-centroPantalla);
 
-        if (distancia < distanciaMenor) {
+        if(distancia<distanciaMenor){
 
-            distanciaMenor = distancia;
-            actual = index;
+            distanciaMenor=distancia;
+            actual=index;
 
         }
 
     });
 
 
-    let siguiente = actual;
+    let siguiente=actual;
 
 
-    /* ↓ SIGUIENTE */
+    if(event.key==="ArrowDown"){
 
-    if (event.key === "ArrowDown") {
-
-        if (actual < containers.length - 1) {
-
-            siguiente = actual + 1;
-
+        if(actual<containers.length-1){
+            siguiente=actual+1;
         }
 
     }
 
 
-    /* ↑ ANTERIOR */
+    if(event.key==="ArrowUp"){
 
-    if (event.key === "ArrowUp") {
-
-        if (actual > 0) {
-
-            siguiente = actual - 1;
-
+        if(actual>0){
+            siguiente=actual-1;
         }
 
     }
 
 
-    /* Si no cambió, no hacer nada */
-
-    if (siguiente === actual) {
+    if(siguiente===actual){
         return;
     }
 
 
-    /* Ir al video */
-
     containers[siguiente].scrollIntoView({
-        behavior: "smooth",
-        block: "center"
+        behavior:"smooth",
+        block:"center"
     });
 
 });
 
 
-
 /* =================================
-   BARRA ESPACIADORA = PLAY / PAUSA
+   ESPACIO = PLAY / PAUSA
+   NO ACTIVA EL AUDIO
 ================================= */
 
-document.addEventListener("keydown", event => {
+document.addEventListener("keydown",event=>{
 
-    if (event.code !== "Space") {
+    if(event.code!=="Space"){
         return;
     }
 
     event.preventDefault();
 
-    const videos =
-        document.querySelectorAll(".short-video");
+    const videos=document.querySelectorAll(".short-video");
 
-    if (!videos.length) {
+    if(!videos.length){
         return;
     }
 
-    let videoActual = null;
-    let distanciaMenor = Infinity;
 
-    const centroPantalla =
-        window.innerHeight / 2;
+    let videoActual=null;
+    let distanciaMenor=Infinity;
 
-    videos.forEach(video => {
+    const centroPantalla=window.innerHeight/2;
 
-        const rect =
-            video.getBoundingClientRect();
 
-        const centroVideo =
-            rect.top + rect.height / 2;
+    videos.forEach(video=>{
 
-        const distancia =
-            Math.abs(centroVideo - centroPantalla);
+        const rect=video.getBoundingClientRect();
 
-        if (distancia < distanciaMenor) {
+        const centroVideo=rect.top+(rect.height/2);
 
-            distanciaMenor = distancia;
-            videoActual = video;
+        const distancia=Math.abs(centroVideo-centroPantalla);
+
+        if(distancia<distanciaMenor){
+
+            distanciaMenor=distancia;
+            videoActual=video;
 
         }
 
     });
 
-    if (!videoActual) {
+
+    if(!videoActual){
         return;
     }
 
 
-    /* PAUSAR */
+    /* PAUSA */
 
-    if (!videoActual.paused) {
+    if(!videoActual.paused){
 
         videoActual.pause();
 
@@ -827,26 +498,26 @@ document.addEventListener("keydown", event => {
 
     /* PLAY */
 
-    videoActual.muted = !audioActivado;
+    /*
+       IMPORTANTE:
+       La barra espaciadora NO activa
+       el sonido.
+    */
 
-    videoActual.play().catch(() => {});
+    videoActual.muted=!audioActivado;
+
+    videoActual.play().catch(()=>{});
 
 });
-        /*
-        =================================
-        INICIAR
 
 
+/* =================================
+   INICIAR
+================================= */
 
-        
-        =================================
-        */
+cargarVideos();
 
-        cargarVideos();
-
-    </script>
-
+</script>
 
 </body>
-
 </html>
