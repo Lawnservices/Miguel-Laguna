@@ -235,44 +235,79 @@
 <body>
 
 
+    <!-- CARGANDO -->
+
     <div id="loading" class="loading">
         Cargando videos...
     </div>
 
+
+    <!-- FEED -->
 
     <main id="video-feed"></main>
 
 
     <script>
 
-        const API_URL = "https://www.creantunegocio.com/api/videos";
-
-        const feed = document.getElementById("video-feed");
-
-        const loading = document.getElementById("loading");
+        const API_URL =
+            "https://www.creantunegocio.com/api/videos";
 
 
-        /* =================================
-           CARGAR VIDEOS
-        ================================= */
+        const feed =
+            document.getElementById("video-feed");
+
+
+        const loading =
+            document.getElementById("loading");
+
+
+        /*
+        =================================
+        ESTADO DEL AUDIO
+
+        false = todavía no ha tocado ningún video
+        true  = el usuario ya activó el audio
+        =================================
+        */
+
+        let audioActivado = false;
+
+
+
+        /*
+        =================================
+        CARGAR VIDEOS
+        =================================
+        */
 
         async function cargarVideos() {
 
             try {
 
-                const respuesta = await fetch(API_URL);
+                const respuesta =
+                    await fetch(API_URL);
+
 
                 if (!respuesta.ok) {
+
                     throw new Error(
                         "Error HTTP: " + respuesta.status
                     );
+
                 }
 
-                const videos = await respuesta.json();
+
+                const videos =
+                    await respuesta.json();
+
 
                 loading.remove();
 
-                if (!Array.isArray(videos) || videos.length === 0) {
+
+                if (
+                    !Array.isArray(videos) ||
+                    videos.length === 0
+                ) {
 
                     feed.innerHTML = `
                         <div class="error">
@@ -281,15 +316,22 @@
                     `;
 
                     return;
+
                 }
 
 
-                /* Crear videos */
+                /*
+                =================================
+                CREAR LOS VIDEOS
+                =================================
+                */
 
                 videos.forEach(video => {
 
+
                     const container =
                         document.createElement("div");
+
 
                     container.className =
                         "video-container";
@@ -333,14 +375,23 @@
                 });
 
 
+                /*
+                =================================
+                INICIAR SISTEMA DE REPRODUCCIÓN
+                =================================
+                */
+
                 iniciarReproduccion();
 
 
             } catch (error) {
 
+
                 console.error(error);
 
+
                 loading.remove();
+
 
                 feed.innerHTML = `
 
@@ -353,7 +404,7 @@
                             </h2>
 
                             <p>
-                                ${error.message}
+                                ${escapeHTML(error.message)}
                             </p>
 
                         </div>
@@ -367,154 +418,262 @@
         }
 
 
-        /* =================================
-           SEGURIDAD PARA LOS TEXTOS
-        ================================= */
+
+        /*
+        =================================
+        PROTEGER TEXTO HTML
+        =================================
+        */
 
         function escapeHTML(text) {
 
             const div =
                 document.createElement("div");
 
-            div.textContent = text;
+
+            div.textContent =
+                text;
+
 
             return div.innerHTML;
 
         }
 
 
-        /* =================================
-           AUTOPLAY TIPO TIKTOK
-        ================================= */
 
-       function iniciarReproduccion() {
+        /*
+        =================================
+        SISTEMA TIPO TIKTOK
+        =================================
+        */
 
-    const videos = document.querySelectorAll(".short-video");
-
-    let audioActivado = false;
-
-
-    /* =================================
-       TOCAR EL PRIMER VIDEO
-    ================================= */
-
-    videos.forEach(video => {
-
-        video.addEventListener("click", () => {
-
-            audioActivado = true;
-
-            videos.forEach(otherVideo => {
-
-                if (otherVideo !== video) {
-                    otherVideo.pause();
-                }
-
-            });
-
-            video.muted = false;
-
-            video.play().catch(() => {});
-
-        });
-
-    });
+        function iniciarReproduccion() {
 
 
-    /* =================================
-       SCROLL - TIKTOK
-    ================================= */
-
-    const observer = new IntersectionObserver(
-
-        entries => {
-
-            entries.forEach(entry => {
-
-                const video = entry.target;
+            const videos =
+                document.querySelectorAll(".short-video");
 
 
-                if (
-                    entry.isIntersecting &&
-                    entry.intersectionRatio >= 0.75
-                ) {
+            /*
+            =================================
+            TOCAR CUALQUIER VIDEO
 
-                    /* Pausar los demás */
+            El primer toque del usuario
+            activa el sonido.
+            =================================
+            */
 
-                    videos.forEach(otherVideo => {
+            videos.forEach(video => {
 
-                        if (otherVideo !== video) {
-                            otherVideo.pause();
+
+                video.addEventListener("click", () => {
+
+
+                    /*
+                    ACTIVAR AUDIO
+                    */
+
+                    audioActivado = true;
+
+
+                    /*
+                    PAUSAR LOS DEMÁS
+                    */
+
+                    videos.forEach(otroVideo => {
+
+                        if (otroVideo !== video) {
+
+                            otroVideo.pause();
+
                         }
 
                     });
 
 
                     /*
-                       Si el usuario ya tocó
-                       el primer video,
-                       los siguientes tienen audio.
+                    QUITAR MUTE
                     */
 
-                    if (audioActivado) {
+                    video.muted = false;
 
-                        video.muted = false;
 
-                    } else {
-
-                        video.muted = true;
-
-                    }
-
+                    /*
+                    REPRODUCIR
+                    */
 
                     video.play().catch(() => {});
 
-                }
 
-
-                else {
-
-                    video.pause();
-
-                }
+                });
 
             });
 
-        },
 
-        {
-            threshold: [0.75]
+
+            /*
+            =================================
+            DETECTAR VIDEO VISIBLE
+            =================================
+            */
+
+            const observer =
+                new IntersectionObserver(
+
+                    entries => {
+
+
+                        entries.forEach(entry => {
+
+
+                            const video =
+                                entry.target;
+
+
+
+                            /*
+                            =================================
+                            VIDEO VISIBLE
+                            =================================
+                            */
+
+                            if (
+                                entry.isIntersecting &&
+                                entry.intersectionRatio >= 0.75
+                            ) {
+
+
+                                /*
+                                PAUSAR TODOS LOS DEMÁS
+                                */
+
+                                videos.forEach(otroVideo => {
+
+                                    if (otroVideo !== video) {
+
+                                        otroVideo.pause();
+
+                                    }
+
+                                });
+
+
+
+                                /*
+                                =================================
+                                AUDIO
+                                =================================
+
+                                Si el usuario ya tocó un video,
+                                el siguiente video tendrá audio.
+
+                                Si todavía no ha tocado nada,
+                                permanece muteado.
+                                =================================
+                                */
+
+                                if (audioActivado) {
+
+                                    video.muted = false;
+
+                                } else {
+
+                                    video.muted = true;
+
+                                }
+
+
+
+                                /*
+                                REPRODUCIR VIDEO
+                                */
+
+                                video.play().catch(() => {});
+
+
+                            }
+
+
+                            /*
+                            =================================
+                            VIDEO FUERA DE PANTALLA
+                            =================================
+                            */
+
+                            else {
+
+                                video.pause();
+
+                            }
+
+                        });
+
+                    },
+
+                    {
+                        threshold: 0.75
+                    }
+
+                );
+
+
+
+            /*
+            =================================
+            OBSERVAR TODOS LOS VIDEOS
+            =================================
+            */
+
+            videos.forEach(video => {
+
+
+                observer.observe(video);
+
+
+
+                /*
+                =================================
+                CUANDO TERMINE
+
+                Volver a empezar.
+                =================================
+                */
+
+                video.addEventListener(
+                    "ended",
+                    () => {
+
+
+                        video.currentTime = 0;
+
+
+                        /*
+                        Mantener el estado
+                        del audio.
+                        */
+
+                        video.muted =
+                            !audioActivado;
+
+
+                        video.play().catch(() => {});
+
+
+                    }
+                );
+
+
+            });
+
         }
 
-    );
 
 
-    /* Observar todos los videos */
-
-    videos.forEach(video => {
-
-        observer.observe(video);
-
-
-        /* Reiniciar cuando termina */
-
-        video.addEventListener("ended", () => {
-
-            video.currentTime = 0;
-
-            video.play().catch(() => {});
-
-        });
-
-    });
-
-}
-        
-
-
-        /* =================================
-           INICIAR
-        ================================= */
+        /*
+        =================================
+        INICIAR
+        =================================
+        */
 
         cargarVideos();
 
