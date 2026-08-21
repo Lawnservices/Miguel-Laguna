@@ -667,7 +667,80 @@
 
         }
 
+/* =================================
+   FLECHAS DEL TECLADO EN PC
+================================= */
 
+document.addEventListener("keydown", event => {
+
+    /* Solo flechas arriba y abajo */
+
+    if (event.key !== "ArrowDown" && event.key !== "ArrowUp") {
+        return;
+    }
+
+    const containers =
+        document.querySelectorAll(".video-container");
+
+    if (!containers.length) {
+        return;
+    }
+
+    /* Evitar que la página haga su movimiento normal */
+
+    event.preventDefault();
+
+    /* Encontrar el video que está visible */
+
+    let actual = 0;
+
+    containers.forEach((container, index) => {
+
+        const rect =
+            container.getBoundingClientRect();
+
+        if (
+            rect.top <= window.innerHeight / 2 &&
+            rect.bottom >= window.innerHeight / 2
+        ) {
+            actual = index;
+        }
+
+    });
+
+
+    /* Siguiente video */
+
+    if (event.key === "ArrowDown") {
+
+        if (actual < containers.length - 1) {
+
+            containers[actual + 1].scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    }
+
+
+    /* Video anterior */
+
+    if (event.key === "ArrowUp") {
+
+        if (actual > 0) {
+
+            containers[actual - 1].scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    }
+
+});
 
         /*
         =================================
