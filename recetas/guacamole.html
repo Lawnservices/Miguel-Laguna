@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Receta fácil para preparar un delicioso guacamole casero.">
+    <title>🥑 Guacamole Casero</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">🥑 Guacamole</div>
+        <a href="#receta">Receta</a>
+        <a href="#ingredientes">Ingredientes</a>
+        <a href="#video">Video</a>
+         
+    </nav>
+    
+</header>
+ 
+<main>
+ 
+ 
+<section class="hero">
+    <div class="hero-text">
+        <span>RECETA CASERA</span>
+        <h1>🥑 Guacamole<br>fresco y delicioso</h1>
+        <p>
+            Aprende a preparar un guacamole fácil, fresco y lleno de sabor.
+            Perfecto para acompañar tus comidas o disfrutar con totopos.
+        </p>
+
+        <a href="#video" class="btn">▶ Ver el video</a>
+    </div>
+
+    <div class="hero-image">
+        <div class="guacamole">🥑</div>
+    </div>
+</section>
+
+<section class="info">
+    <div>
+        <strong>⏱️</strong>
+        <span>10 minutos</span>
+    </div>
+
+    <div>
+        <strong>👨‍🍳</strong>
+        <span>Fácil</span>
+    </div>
+
+    <div>
+        <strong>🍽️</strong>
+        <span>4 porciones</span>
+    </div>
+</section>
+
+<section id="ingredientes" class="section">
+    <h2>🥑 Ingredientes</h2>
+
+    <div class="ingredients">
+        <div class="ingredient">🥑 3 aguacates maduros</div>
+        <div class="ingredient">🍅 1 tomate</div>
+        <div class="ingredient">🧅 1/4 de cebolla</div>
+        <div class="ingredient">🌿 Cilantro al gusto</div>
+        <div class="ingredient">🌶️ 1 chile jalapeño</div>
+        <div class="ingredient">🍋 Jugo de 1 limón</div>
+        <div class="ingredient">🧂 Sal al gusto</div>
+    </div>
+</section>
+
+<section id="receta" class="section preparation">
+    <h2>👨‍🍳 Preparación</h2>
+
+    <div class="steps">
+
+        <div class="step">
+            <span>1</span>
+            <div>
+                <h3>Prepara los aguacates</h3>
+                <p>
+                    Corta los aguacates, retira el hueso y coloca la pulpa
+                    en un recipiente.
+                </p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span>2</span>
+            <div>
+                <h3>Machaca</h3>
+                <p>
+                    Machaca los aguacates con un tenedor hasta obtener
+                    la textura que prefieras.
+                </p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span>3</span>
+            <div>
+                <h3>Agrega los ingredientes</h3>
+                <p>
+                    Añade tomate, cebolla, cilantro y chile jalapeño
+                    picados.
+                </p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span>4</span>
+            <div>
+                <h3>El toque final</h3>
+                <p>
+                    Agrega el jugo de limón y sal al gusto. Mezcla todo
+                    muy bien.
+                </p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span>5</span>
+            <div>
+                <h3>¡A disfrutar!</h3>
+                <p>
+                    Sirve inmediatamente con totopos, tacos o tu comida
+                    favorita.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="video" class="video-section">
+    <span>🎬 MIRA LA RECETA</span>
+    <h2>Así preparamos nuestro guacamole</h2>
+
+    <div class="video-container">
+        <video controls poster="">
+            <source src="video/guacamole.mp4" type="video/mp4">
+            Tu navegador no puede reproducir este video.
+        </video>
+    </div>
+
+    <p>
+        Mira el video completo y aprende paso a paso cómo preparar
+        este delicioso guacamole.
+    </p>
+</section>
+
+<section class="tip">
+    <h2>💡 Consejo</h2>
+    <p>
+        Para evitar que el aguacate se oxide rápidamente, agrega el
+        jugo de limón inmediatamente después de machacarlo.
+    </p>
+</section>
+
+<section class="share">
+    <h2>📋 ¿Quieres guardar la receta?</h2>
+    <button onclick="copiarReceta()">Copiar receta</button>
+    <p id="mensaje"></p>
+</section>
+
+</main>
+
+<footer>
+    <p>🥑 Guacamole Casero</p>
+    <p>Una receta sencilla, fresca y deliciosa.</p>
+</footer>
+
+<script src="script.js"></script>
+<script src="translations.js"></script>
+</body>
+</html>
