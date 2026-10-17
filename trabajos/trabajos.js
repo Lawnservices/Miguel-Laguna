@@ -58,13 +58,14 @@ fetch("https://www.creantunegocio.com/api/trabajos")
 
 function borrarTrabajo(id) {
 
-    if (!confirm("¿Quieres borrar este trabajo?")) {
-        return;
-    }
+    // if (!confirm("¿Quieres borrar este trabajo?")) {
+    //     return;
+    // }
 
     fetch(`https://www.creantunegocio.com/api/trabajos/${id}`, {
         method: "DELETE"
     })
+    
     .then(res => res.text())
     .then(data => {
 
