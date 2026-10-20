@@ -1,22 +1,29 @@
-// Botón like
-document.getElementById("likeBtn").onclick = async () => {
-  const ref = doc(db, "likes", userID);
-  const exists = await getDoc(ref);
+async function darLike(id) {
+    const res = await fetch(`https://www.creantunegocio.com/api/like/${id}`, { method: "POST" });
+    const data = await res.json();
 
-  if (exists.exists()) {
-    alert("You already liked it. 👍");
-    return;
-  }
+    const btn = document.getElementById("btnLike");
 
-  await setDoc(ref, { fecha: Date.now() });
-  loadLikes();
-  alert("Thank you for your like! 🎉");
-};
+    if (!data.ok) {
+        // Ya dio like → cambiar botón
+        btn.textContent = "❤️ Thank you";
+        btn.classList.add("disabled");
+        btn.disabled = true;
+    } else {
+        // Like nuevo → cambiar botón
+        btn.textContent = "❤️ Thank you";
+        btn.classList.add("disabled");
+        btn.disabled = true;
+    }
 
-let colores = ['#22a6ce', '#0d1f3d','green','blue'];
-let index = 0;
+    cargarLikes(id);
+}
 
-setInterval(() => {
-document.getElementById('likeBtn').style.backgroundColor = colores[index];
-index = (index + 1) % colores.length;
-}, 1000);
+async function cargarLikes(id) {
+    const res = await fetch(`https://www.creantunegocio.com/api/likes/${id}`);
+    const data = await res.json();
+    document.getElementById("totalLikes").textContent = data.likes;
+}
+
+// Cargar likes al entrar
+cargarLikes(12);

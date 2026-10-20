@@ -8,6 +8,7 @@
   <meta name="author" content="Miguel Laguna" />
   <link rel="icon" href="https://img.icons8.com/fluency/48/field.png" />
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="like.css">
    
   <!-- Structured data (local business) -->
   <script type="application/ld+json">
@@ -69,10 +70,13 @@
       <a class="cta" href="tel:+12408838479">Call Now</a>
     </header>
     <!-- like-web -->
-  <section id="like-web">
-    <button id="likeBtn">👍 Like...</button>
-    
-  </section>    
+
+  <p>One click to leave your like</p>
+      <div class="like-box">
+       <button class="like-btn" id="btnLike" onclick="darLike(12)">👍 Like</button>
+        <span class="like-count" id="totalLikes">0</span>
+      </div>  
+
 <a href="https://g.page/r/CYXPRiqwLXuXEBM/review" 
    target="_blank" 
    style="display:inline-block;
