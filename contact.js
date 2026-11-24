@@ -34,6 +34,7 @@ document.querySelector("form").addEventListener("submit", function () {
 
      
 if (message.value.trim() === ' '){
+    
     e.preventDefault();
     
     mensaje.textContent = 'What is your message';
