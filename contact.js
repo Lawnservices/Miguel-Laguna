@@ -2,7 +2,7 @@ const one =  document.getElementById('one');
 const year = new Date().getFullYear();
 one.textContent = `© ${year} Miguel Laguna Lawn Services. All Rights Reserved`;
 
-
+ 
 const nombre = document.getElementById("name");
 const telefono = document.getElementById("tel");
 const message = document.getElementById("message");
@@ -58,4 +58,7 @@ form.addEventListener("submit", function (e) {
         }
     }
 
+     setTimeout(() => {
+        this.reset();
+    }, 100);
 });
