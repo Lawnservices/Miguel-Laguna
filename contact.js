@@ -44,17 +44,4 @@ if (message.value.trim() === ' '){
     }, 100);
 });
 
-// document.getElementById("name").addEventListener("input", function () {
-//     this.value = this.value.replace(/[^A-Za-z\s]/g, "");
-//     if (this.value.length < 8) {
-//         this.setCustomValidity("");
-//     } else {
-//         this.setCustomValidity("");
-//     }
-// });
-
-
-// document.getElementById("tel").addEventListener("input", function () {
-//     this.value = this.value.replace(/[^0-9]/g, "");
-
-// });
+ 
