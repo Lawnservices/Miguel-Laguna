@@ -7,6 +7,12 @@
      <meta name="author" content="Miguel Laguna">
      <link rel="shortcut icon" href="https://img.icons8.com/liquid-glass/48/chat-message.png" type="image/x-icon">
     <link rel="stylesheet" href="contact.css">
+    <style>
+        #mensaje{
+        text-align: center;
+        color: aliceblue;
+        }
+    </style>
     <title>Request a Free Estimate</title>
 </head>
 <body>
@@ -15,12 +21,14 @@
      </header>
     <h1>Request a Free Estimate</h1>
     <h2>Fill out the form below and we'll contact you as soon as possible.</h2>
+
     <form action="https://www.creantunegocio.com/mensaje" method="POST">
         <input type="text" name="name" id="name" placeholder="Name" required   pattern="[A-Za-z\s]+" title="Only letters allowed" maxlength="30">
         <input type="tel" name="tel" id="tel" placeholder="Phone Number" required inputmode="numeric" pattern="[0-9]+" maxlength="10">
         <input type="text" name="message" id="message" placeholder="Send Message" maxlength="100" required>
         <button type="submit">Enviar</button>
     </form>
+    <p id="mensaje"></p>
      <footer>
         <p id="one"></p>
     </footer>

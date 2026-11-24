@@ -1,50 +1,61 @@
 const one =  document.getElementById('one');
 const year = new Date().getFullYear();
-
 one.textContent = `© ${year} Miguel Laguna Lawn Services. All Rights Reserved`;
 
 
-document.getElementById("name").addEventListener("input", function () {
+const nombre = document.getElementById("name");
+const telefono = document.getElementById("tel");
+const message = document.getElementById("message");
+const mensaje = document.getElementById("mensaje");
+
+const form = document.querySelector("form");
+
+// VALIDAR NOMBRE
+nombre.addEventListener("input", function () {
+
     this.value = this.value.replace(/[^A-Za-z\s]/g, "");
 
-    if (this.value.length < 3) {
-        this.setCustomValidity("The name must be at least 8 characters long.");
+    if (this.value.trim().length < 3) {
+        this.setCustomValidity("The name must be at least 3 characters long.");
     } 
-      else if (this.value.length > 30) {
-        this.setCustomValidity("The name is too long.");}
+    else if (this.value.length > 30) {
+        this.setCustomValidity("The name is too long.");
+    } 
     else {
         this.setCustomValidity("");
     }
+
 });
 
+// VALIDAR TELEFONO
+telefono.addEventListener("input", function () {
 
-document.getElementById("tel").addEventListener("input", function () {
     this.value = this.value.replace(/[^0-9]/g, "");
 
-    if (this.value.length < 10) {
+    if (this.value.length !== 10) {
         this.setCustomValidity("The number must have 10 digits.");
-    } else {
+    } 
+    else {
         this.setCustomValidity("");
     }
+
 });
 
-document.querySelector("form").addEventListener("submit", function () {
-    setTimeout(() => {
-        this.reset();
-    }, 100);
+// VALIDAR MENSAJE Y FORMULARIO
+form.addEventListener("submit", function (e) {
+
+    mensaje.textContent = "";
+
+    if (nombre.value.trim().length < 3 ||
+        nombre.value.length > 30 ||
+        telefono.value.length !== 10 ||
+        message.value.trim() === "") {
+
+        e.preventDefault();
+
+        if (message.value.trim() === "") {
+            mensaje.textContent = "Please enter your message.";
+        }
+    }
+
 });
-
-// document.getElementById("name").addEventListener("input", function () {
-//     this.value = this.value.replace(/[^A-Za-z\s]/g, "");
-//     if (this.value.length < 8) {
-//         this.setCustomValidity("");
-//     } else {
-//         this.setCustomValidity("");
-//     }
-// });
-
-
-// document.getElementById("tel").addEventListener("input", function () {
-//     this.value = this.value.replace(/[^0-9]/g, "");
-
-// });
